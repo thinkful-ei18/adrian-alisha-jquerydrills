@@ -26,6 +26,7 @@ Hint: you may find it helpful to read up on and use the following jQuery methods
 // listen for the button to be clicked *
 // when clicked find the text in the input field *
 // add the chosen text to the list *
+
 $('#js-shopping-list-form').submit(function (event) {
   event.preventDefault();
   let shoppingItem = $('.js-shopping-list-entry').val();
@@ -40,4 +41,10 @@ $('#js-shopping-list-form').submit(function (event) {
           </button>
         </div>
       </li>`);
+});
+
+// $('.shopping-item-toggle').on('click').toggleClass('.shopping-item__checked');
+
+$('.shopping-list').on('click', '.shopping-item-toggle', function (event) {
+  $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
 });
